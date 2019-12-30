@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.dragapablepanel.sample">
+
+  <!-- Permissions -->
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+  <uses-feature
+      android:glEsVersion="0x00020000"
+      android:required="true"/>
+
+  <!-- Application configuration -->
+
+  <application
+      android:name="com.example.dragapablepanel.ex.DraggablePanelApplication"
+      android:icon="@drawable/s"
+      android:label="@string/app_name"
+      android:theme="@style/AppThemes">
+
+    <!-- Maps API KEY -->
+
+    <meta-data
+        android:name="com.google.android.maps.v2.API_KEY"
+        android:value="AIzaSyC1rMU-mkhoyTvBIdTnYU0dss0tU9vtK48"/>
+
+    <!-- Main Activity -->
+
+    <activity
+        android:name="com.example.dragapablepanel.ex.activity.MainActivity"
+        android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <!-- Places sample -->
+
+    <activity
+        android:name="com.example.dragapablepanel.ex.activity.PlacesSampleActivity"
+        android:label="@string/places_sample_activity_titles">
+    </activity>
+
+    <!-- TV Shows sample -->
+
+    <activity
+        android:name="com.example.dragapablepanel.ex.activity.TvShowsActivity"
+        android:label="@string/tv_shows_sample_activity_title"/>
+
+
+    <!-- Youtube Sample -->
+
+    <activity
+        android:name="com.example.dragapablepanel.ex.activity.YoutubeSampleActivity"
+        android:label="@string/youtube_sample_activity_titles">
+    </activity>
+
+
+    <!-- Video Sample -->
+
+    <activity
+        android:name="com.example.dragapablepanel.ex.activity.VideoSampleActivity"
+        android:label="@string/video_sample_activity_titles">
+    </activity>
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version"/>
+
+  </application>
+
+</manifest>

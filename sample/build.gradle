@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply plugin: 'checkstyle'
+
+android {
+  compileSdkVersion 28
+
+  defaultConfig {
+    versionName "1.1.0"
+    versionCode 1
+      minSdkVersion 14
+    targetSdkVersion 28
+    multiDexEnabled true
+
+  }
+  dataBinding {
+    enabled = true
+  }
+  sourceSets {
+    main {
+      manifest.srcFile 'AndroidManifest.xml'
+      java.srcDirs = ['src/main/java']
+      res.srcDirs = ['res']
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+dependencies {
+  implementation 'com.android.support:multidex:1.0.3'
+  implementation project(':draggablepanel')
+  implementation 'com.squareup.picasso:picasso:2.71828'
+  implementation 'javax.inject:javax.inject:1@jar'
+  implementation 'com.squareup.dagger:dagger-compiler:1.1.0'
+  //implementation 'com.jakewharton:butterknife:10.2.0'
+  //annotationProcessor 'com.jakewharton:butterknife:10.2.0'
+  implementation("com.jakewharton:butterknife:10.0.0")
+  annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
+  implementation 'com.squareup.dagger:dagger:1.1.0'
+  annotationProcessor 'com.squareup.dagger:dagger-compiler:1.1.0'
+  implementation 'com.github.pedrovgs:renderers:1.0.9'
+  implementation 'com.google.android.gms:play-services:12.0.1'
+  //implementation 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+  implementation files('libs/YouTubeAndroidPlayerApi.jar')
+  implementation 'com.nineoldandroids:library:2.4.0'
+
+}
